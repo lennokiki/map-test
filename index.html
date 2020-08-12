@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地图引擎测试</title>
+  <link rel="stylesheet" href="./index.css">
+  <link rel='stylesheet' href='./mapbox-gl.css'/>
+  <link rel="stylesheet" href="./ol-v6.4.3.css">
+  <link rel="stylesheet" href="./leaflet-v1.6.0.css" ntegrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==">
+  <script src='./mapbox-gl.js'></script>
+  <script src='./ol-v6.4.3.js'></script>
+  <script src='./leaflet-v1.6.0.js' ntegrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="></script>
+  <script src="./jquery.min.js"></script>
+  <script src="./utils.js"></script>
+  <script src="./map.js"></script>
+  <script src="./main.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="manage">
+      <p class="title">地图引擎测试</p>
+      <div class="manage-list">
+        <label for="mEngine">地图</label>
+        <select name="m-engine" id="mEngine">
+          <option value="Mapbox" selected>Mapbox</option>
+          <option value="Openlayers">Openlayers</option>
+          <option value="Leaflet" disabled>Leaflet</option>
+        </select>
+      </div>
+      <div class="manage-list">
+        <label for="mType">点类别</label>
+        <select name="m-type" id="mType">
+          <option value="default" selected>默认</option>
+          <option value="plane">飞机</option>
+          <option value="tank">坦克</option>
+          <option value="bike">自行车</option>
+        </select>
+      </div>
+      <div class="manage-list">
+        <label for="mSpeed">点速度</label>
+        <select name="m-speed" id="mSpeed">
+          <option value="100">100</option>
+          <option value="500">500</option>
+          <option value="1000" selected>1,000</option>
+          <option value="2000">2,000</option>
+          <option value="3000">3,000</option>
+          <option value="5000">5,000</option>
+          <option value="10000">10,000</option>
+          <option value="30000">30,000</option>
+          <option value="50000">50,000</option>
+          <option value="-2">自定义</option>
+        </select>
+        <span>km/h</span>
+      </div>
+      <div class="manage-list" id="updateWrap">
+        <label for="mUpdate">点更新频率</label>
+        <select name="m-update" id="mUpdate">
+          <option value="300">0.3S</option>
+          <option value="500">0.5S</option>
+          <option value="800" selected>0.8S</option>
+          <option value="1000">1S</option>
+          <option value="1500">1.5S</option>
+          <option value="2000">2S</option>
+        </select>
+      </div>
+      <div class="manage-list">
+        <label for="mCount">点数量</label>
+        <select name="m-count" id="mCount">
+          <option value="1" selected>1</option>
+          <option value="10">10</option>
+          <option value="100">100</option>
+          <option value="500">500</option>
+          <option value="1000">1,000</option>
+          <option value="5000">5,000</option>
+          <option value="8000">8,000</option>
+          <option value="10000">10,000</option>
+          <option value="15000">15,000</option>
+          <option value="20000">20,000</option>
+          <option value="25000">25,000</option>
+          <option value="30000">30,000</option>
+          <option value="35000">35,000</option>
+          <option value="40000">40,000</option>
+          <option value="50000">50,000</option>
+          <option value="100000">100,000</option>
+          <option value="1000000">1,000,000</option>
+          <option value="-2">自定义</option>
+        </select>
+      </div>
+      <div class="manage-list">
+        <label for="">点方式</label>
+        <label>
+          <input type="radio" name="mStyle" value="1">静态
+        </label>
+        <label>
+          <input type="radio" name='mStyle' value="2" checked>动态
+        </label>
+      </div>
+      <div class="manage-list">
+        <label for="">框线</label>
+        <label>
+          <input type="checkbox" name='mCircle' value="1">选择
+        </label>
+      </div>
+      <button id="submit" class="button">生成</button>
+    </div>
+  </header>
+  <main class="main">
+    <div class="map" id="container"></div>
+    <div class="empty" id="empty">
+      <p class="text" id="text">待生成地图...</p>
+      <img class="loading" id="loading" src="./bars.svg" width="60" alt="">
+    </div>
+  </main>
+</body>
+</html>

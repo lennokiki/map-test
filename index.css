@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  background: rgb(43,58,80);
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.header .title {
+  font-size: 30px;
+  color: #fff;
+  margin-right: 30px;
+  line-height: 30px;
+}
+.header .manage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  color: #fff;
+}
+.manage .manage-list {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.manage-list label {
+  margin-right: 2px;
+}
+.manage-list label[for]::after {
+  content: "：";
+}
+.manage-list select {
+  border: 1px solid #fff;
+  background: none;
+  color: #fff;
+  padding: 6px 6px;
+}
+.manage-list select:focus {
+  outline: none;
+}
+.manage-list select option {
+  font-size: 14px;
+  line-height: 18px;
+  color: navy;
+  
+}
+.main {
+  height: calc(100% - 80px);
+  position: relative;
+}
+.main .map {
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+}
+.main .empty {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #248bd6;
+  /* background: rgba(165,222,241, 0.5); */
+}
+.main .empty .text {
+  display: block;
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+}
+.main .empty .loading {
+  display: none;
+}
+.marker {
+  border-radius: 50%;
+}
+button {
+  font-size: 14px;
+  background: none;
+  outline: none;
+  border: 1px solid #fff;
+  padding: 8px 16px;
+  color: #fff;
+  border-radius: 4px;
+}
