@@ -2,19 +2,19 @@ var mapbox_accesstoken = 'pk.eyJ1IjoibGVubm9raWtpIiwiYSI6ImNrZGVoN25hNTA2dnYyenQ
 var IconConfig = {
   default: {
     size: 30,
-    image: 'http://localhost/images/default.png'
+    image: 'images/default.png'
   },
   plane: {
     size: 30,
-    image: 'http://localhost/images/plane.png'
+    image: 'images/plane.png'
   },
   tank: {
     size: 30,
-    image: 'http://localhost/images/tank.png'
+    image: 'images/tank.png'
   },
   bike: {
     size: 30,
-    image: 'http://localhost/images/bike.png'
+    image: 'images/bike.png'
   }
 }
 
